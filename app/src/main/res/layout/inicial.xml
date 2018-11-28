@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/tBV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bem vindo!"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bJogoB"/>
+
+    <Button
+        android:id="@+id/bJogoB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jogo Básico"
+        android:onClick="mJogoBasico"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tBV"
+        app:layout_constraintBottom_toTopOf="@id/bJogoA"/>
+
+    <Button
+        android:id="@+id/bJogoA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jogo Avançado"
+        android:onClick="mJogoAvancado"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bJogoB"
+        app:layout_constraintBottom_toTopOf="@id/bExit"/>
+
+    <Button
+        android:id="@+id/bExit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sair"
+        android:onClick="mSair"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bJogoA" />
+
+
+</android.support.constraint.ConstraintLayout>
