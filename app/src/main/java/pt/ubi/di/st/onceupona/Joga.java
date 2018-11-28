@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class Joga extends Activity { //boas
+public class Joga extends Activity { //boas duas vezes
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
