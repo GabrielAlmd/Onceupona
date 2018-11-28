@@ -12,3 +12,5 @@ public class Joga extends Activity { //boas
         setContentView(R.layout.activity_joga);
     }
 }
+
+//ola
