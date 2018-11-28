@@ -6,34 +6,35 @@
     android:layout_height="match_parent"
     tools:context=".InsereJogadorAvancado">
 
-    <TextView
-        android:id="@+id/tv1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Insere os dados para jogar:"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/tv2"/>
-
 
     <TextView
         android:id="@+id/tv2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nº de Jogadores :"
-        app:layout_constraintTop_toBottomOf="@id/tv1"
-        app:layout_constraintRight_toLeftOf="@id/sp1"
+        android:text="Insere Jogador :"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/et1"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toTopOf="@id/tv3"/>
 
-    <Spinner
-        android:id="@+id/sp1"
+    <EditText
+        android:id="@+id/et1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/tv1"
-        app:layout_constraintRight_toRightOf="parent"
+        android:hint="Nome"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/bt1"
         app:layout_constraintLeft_toRightOf="@id/tv2"
+        app:layout_constraintBottom_toTopOf="@id/sp2"/>
+
+    <Button
+        android:id="@+id/bt1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/et1"
         app:layout_constraintBottom_toTopOf="@id/sp2"/>
 
     <TextView
@@ -50,7 +51,7 @@
         android:id="@+id/sp2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/sp1"
+        app:layout_constraintTop_toBottomOf="@id/et1"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toRightOf="@id/tv3"
         app:layout_constraintBottom_toTopOf="@id/sp3"/>
@@ -82,7 +83,7 @@
         app:layout_constraintTop_toBottomOf="@id/tv4"
         app:layout_constraintRight_toLeftOf="@id/sp4"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/bt"/>
+        app:layout_constraintBottom_toTopOf="@id/bt2"/>
 
     <Spinner
         android:id="@+id/sp4"
@@ -91,10 +92,10 @@
         app:layout_constraintTop_toBottomOf="@id/sp3"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toRightOf="@id/tv5"
-        app:layout_constraintBottom_toTopOf="@id/bt"/>
+        app:layout_constraintBottom_toTopOf="@id/bt2"/>
 
     <Button
-        android:id="@+id/bt"
+        android:id="@+id/bt2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Seguinte"
