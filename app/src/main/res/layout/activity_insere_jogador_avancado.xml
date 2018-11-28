@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InsereJogadorAvancado">
+
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Insere Jogador :"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/et1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tv3"/>
+
+    <EditText
+        android:id="@+id/et1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Nome"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/bt1"
+        app:layout_constraintLeft_toRightOf="@id/tv2"
+        app:layout_constraintBottom_toTopOf="@id/sp2"/>
+
+    <Button
+        android:id="@+id/bt1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/et1"
+        app:layout_constraintBottom_toTopOf="@id/sp2"/>
+
+    <TextView
+        android:id="@+id/tv3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nº de Caracteres :"
+        app:layout_constraintTop_toBottomOf="@id/tv2"
+        app:layout_constraintRight_toLeftOf="@id/sp2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tv4"/>
+
+    <Spinner
+        android:id="@+id/sp2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/et1"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/tv3"
+        app:layout_constraintBottom_toTopOf="@id/sp3"/>
+
+    <TextView
+        android:id="@+id/tv4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Modos de Jogo :"
+        app:layout_constraintTop_toBottomOf="@id/tv3"
+        app:layout_constraintRight_toLeftOf="@id/sp3"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tv5"/>
+
+    <Spinner
+        android:id="@+id/sp3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/sp2"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/tv4"
+        app:layout_constraintBottom_toTopOf="@id/sp4"/>
+
+    <TextView
+        android:id="@+id/tv5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nº de rondas :"
+        app:layout_constraintTop_toBottomOf="@id/tv4"
+        app:layout_constraintRight_toLeftOf="@id/sp4"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bt2"/>
+
+    <Spinner
+        android:id="@+id/sp4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/sp3"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/tv5"
+        app:layout_constraintBottom_toTopOf="@id/bt2"/>
+
+    <Button
+        android:id="@+id/bt2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Seguinte"
+        android:onClick="vamosJogarModo"
+        app:layout_constraintTop_toBottomOf="@id/tv5"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+</android.support.constraint.ConstraintLayout>
