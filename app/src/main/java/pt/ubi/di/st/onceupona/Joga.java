@@ -12,3 +12,5 @@ public class Joga extends Activity { //boas duas vezes
         setContentView(R.layout.activity_joga);
     }
 }
+
+//ola
