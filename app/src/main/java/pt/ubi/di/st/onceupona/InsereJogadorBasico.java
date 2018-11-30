@@ -1,10 +1,15 @@
 package pt.ubi.di.st.onceupona;
 
 import android.app.Activity;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 
-public class InsereJogadorBasico extends Activity {
+public class InsereJogadorBasico extends Activity
+{
+    SQLiteDatabase db;
+    DatabaseHelper databasehelper = new DatabaseHelper(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -12,7 +17,14 @@ public class InsereJogadorBasico extends Activity {
         setContentView(R.layout.activity_insere_jogador_basico);
     }
 
-    public void vamosJogar (View view){ //onclik metodo do botão seguinte
+    public void vamosJogar (View view) //onclik metodo do botão seguinte
+    {
+        EditText editText1 = (EditText) findViewById(R.id.et1);
+        EditText editText2 = (EditText) findViewById(R.id.et2);
+        String jogador1 = editText1.getText().toString().trim();
+        String jogador2 = editText2.getText().toString().trim();
+        databasehelper.addPlayer(db, jogador1);
+        databasehelper.addPlayer(db, jogador2);
 
     }
 }

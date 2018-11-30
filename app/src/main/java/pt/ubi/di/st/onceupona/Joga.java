@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class Joga extends Activity { //boas duas vezes
+public class Joga extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -12,5 +12,3 @@ public class Joga extends Activity { //boas duas vezes
         setContentView(R.layout.activity_joga);
     }
 }
-
-//ola

@@ -34,7 +34,15 @@ public class DatabaseHelper extends SQLiteOpenHelper
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)
     {
+        db.execSQL("DROP TABLE IF EXISTS "+PLAYERSPLAYING_TABLE);
+        db.execSQL("DROP TABLE IF EXISTS "+FINALTEXTS_TABLE);
+        db.execSQL("DROP TABLE IF EXISTS "+PLAYERS_TABLE);
+        onCreate(db);
+    }
 
+    public void addPlayer(SQLiteDatabase db, String name) //adicionar jogador à base de dados
+    {
+        db.execSQL("INSERT INTO "+PLAYERSPLAYING_TABLE+" ("+PLAYERSPLAYING_NAME+") VALUES ('"+name+"');");
     }
 
 }
