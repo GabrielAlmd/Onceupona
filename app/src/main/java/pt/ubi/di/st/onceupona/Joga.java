@@ -11,9 +11,9 @@ import android.widget.TextView;
 public class Joga extends Activity { //boas duas vezes
     DatabaseHelper myDb = new DatabaseHelper(this);
 
-    TextView tJogadores = findViewById(R.id.lable2);
-    TextView tTexto = findViewById(R.id.mostrapalavras);
-    EditText eTexto = findViewById(R.id.insereTex);
+    TextView tJogadores;
+    TextView tTexto;
+    EditText eTexto;
 
     Intent iPreviousAct;
 
@@ -27,6 +27,12 @@ public class Joga extends Activity { //boas duas vezes
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_joga);
+
+        tJogadores = findViewById(R.id.label2);
+        tTexto = findViewById(R.id.mostrapalavras);
+        eTexto = findViewById(R.id.insereTex);
+
+
         iPreviousAct=getIntent();
 
         Jog1 = iPreviousAct.getStringExtra("jog1");

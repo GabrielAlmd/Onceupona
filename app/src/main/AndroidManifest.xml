@@ -16,8 +16,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".InsereJogadorBasico" />
+        <activity android:name=".InsereJogadorBasico" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".InsereJogadorAvancado">
+
+        </activity>
+
+        <activity android:name=".Joga">
+
 
         </activity>
     </application>
