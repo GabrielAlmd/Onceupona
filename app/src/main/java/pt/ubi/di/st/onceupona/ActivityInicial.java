@@ -6,13 +6,15 @@ import android.os.Bundle;
 import android.view.View;
 
 
-public class ActivityInicial  extends Activity {
-
+public class ActivityInicial  extends Activity
+{
+    DatabaseHelper SelflassDB = new DatabaseHelper(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicial);
+        SelflassDB.getWritableDatabase();
     }
 
     //Método associado ao Botão Jogo Básico para trocar de atividade
