@@ -21,7 +21,8 @@ public class ActivityInicial  extends Activity {
 
         startActivity(iJogoBasico);
     }
-    /****************************************************************
+
+
     //Método associado ao Botão Jogo Avançado para trocar de atividade
     public void mJogoAvancado(View v){
         Intent iJogoAvancado = new Intent(this, InsereJogadorAvancado.class);
@@ -29,6 +30,7 @@ public class ActivityInicial  extends Activity {
         startActivity(iJogoAvancado);
     }
 
+    /****************************************************************
     //Método associado ao Botão Exit para trocar de atividade
     public void mJogoAvancado(View v){
         Intent iExit = new Intent(this, Exit.class);

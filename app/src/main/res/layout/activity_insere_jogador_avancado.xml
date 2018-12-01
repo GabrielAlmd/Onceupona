@@ -99,7 +99,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Seguinte"
-        android:onClick="vamosJogarModo"
+        android:onClick="bSeguinte"
         app:layout_constraintTop_toBottomOf="@id/tv5"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
