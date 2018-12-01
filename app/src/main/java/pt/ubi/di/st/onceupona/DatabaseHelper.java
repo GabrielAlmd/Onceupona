@@ -1,6 +1,7 @@
 package pt.ubi.di.st.onceupona;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 //test
@@ -45,4 +46,11 @@ public class DatabaseHelper extends SQLiteOpenHelper
         db.execSQL("INSERT INTO "+PLAYERSPLAYING_TABLE+" ("+PLAYERSPLAYING_NAME+") VALUES ('"+name+"');");
     }
 
+    /*public String getPlayer(int player_id)
+    {
+        String jogador = null;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT "+PLAYERSPLAYING_NAME+" FROM "+PLAYERSPLAYING_TABLE+" WHERE "+PLAYERSPLAYING_ID+"="+player_id+";", null);
+
+    }*/
 }
