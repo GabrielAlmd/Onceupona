@@ -17,7 +17,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".InsereJogadorBasico" />
-        <activity android:name=".InsereJogadorAvancado"></activity>
+        <activity android:name=".InsereJogadorAvancado">
+
+        </activity>
     </application>
 
 </manifest>
