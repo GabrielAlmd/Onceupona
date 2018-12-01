@@ -4,13 +4,24 @@ import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class Joga extends Activity { //boas duas vezes
+    DatabaseHelper myDb = new DatabaseHelper(this);
 
-    TextView tPlayers = findViewById(R.id.lable2);
+    TextView tJogadores = findViewById(R.id.lable2);
+    TextView tTexto = findViewById(R.id.mostrapalavras);
+    EditText eTexto = findViewById(R.id.insereTex);
+
     Intent iPreviousAct;
 
+    int ID1;
+    int ID2;
+
+    String Jog1;
+    String Jog2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,7 +29,22 @@ public class Joga extends Activity { //boas duas vezes
         setContentView(R.layout.activity_joga);
         iPreviousAct=getIntent();
 
+        Jog1 = iPreviousAct.getStringExtra("jog1");
+        Jog2 = iPreviousAct.getStringExtra("jog2");
 
+        String aux="Jogador 1: "+Jog1+" \n Jogador 2: "+Jog2;
+
+        tJogadores.setText(aux);
+    }
+
+    public void onClickConfirma(View v){
+        String textoTextV=tTexto.getText().toString();
+        String textoEditT=eTexto.getText().toString();
+
+        textoTextV.concat(" "+textoEditT);
+        tTexto.setText(textoTextV);
+
+        eTexto.setText("Insere a próxima frase.");
 
     }
 
