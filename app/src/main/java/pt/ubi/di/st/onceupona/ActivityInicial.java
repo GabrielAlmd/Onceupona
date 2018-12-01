@@ -12,7 +12,7 @@ public class ActivityInicial  extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setContentView(R.layout.activity_inicial);
     }
 
     //Método associado ao Botão Jogo Básico para trocar de atividade
@@ -24,7 +24,7 @@ public class ActivityInicial  extends Activity {
     /****************************************************************
     //Método associado ao Botão Jogo Avançado para trocar de atividade
     public void mJogoAvancado(View v){
-        Intent iJogoAvancado = new Intent(this, JogoAvancado.class);
+        Intent iJogoAvancado = new Intent(this, InsereJogadorAvancado.class);
 
         startActivity(iJogoAvancado);
     }
