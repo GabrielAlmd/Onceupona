@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 
 public class InsereJogadorAvancado extends Activity {
-
+//
     SQLiteDatabase db;
     DatabaseHelper myDB = new DatabaseHelper(this);
 
