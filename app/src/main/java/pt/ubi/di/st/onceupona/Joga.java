@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -23,6 +24,8 @@ public class Joga extends Activity { //boas duas vezes
     String Jog1;
     String Jog2;
 
+    String textoTextV="";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,19 +41,18 @@ public class Joga extends Activity { //boas duas vezes
         Jog1 = iPreviousAct.getStringExtra("jog1");
         Jog2 = iPreviousAct.getStringExtra("jog2");
 
-        String aux="Jogador 1: "+Jog1+" \n Jogador 2: "+Jog2;
+        String aux="Jogador 1: "+Jog1+"\nJogador 2: "+Jog2;
 
         tJogadores.setText(aux);
     }
 
     public void onClickConfirma(View v){
-        String textoTextV=tTexto.getText().toString();
         String textoEditT=eTexto.getText().toString();
 
-        textoTextV.concat(" "+textoEditT);
+        textoTextV = textoTextV+" "+textoEditT;
         tTexto.setText(textoTextV);
-
-        eTexto.setText("Insere a próxima frase.");
+        Log.i("TextoTextView", "onClickConfirma: "+textoTextV);
+        eTexto.setText("");
 
     }
 
