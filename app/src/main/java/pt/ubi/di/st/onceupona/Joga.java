@@ -52,7 +52,7 @@ public class Joga extends Activity { //boas duas vezes
         textoTextV = textoTextV+" "+textoEditT;
         tTexto.setText(textoTextV);
         Log.i("TextoTextView", "onClickConfirma: "+textoTextV);
-        eTexto.setText("");
+        eTexto.setText("");//
 
     }
 
