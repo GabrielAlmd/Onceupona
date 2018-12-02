@@ -25,17 +25,18 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toLeftOf="@id/bt1"
         app:layout_constraintLeft_toRightOf="@id/tv2"
-        app:layout_constraintBottom_toTopOf="@id/sp2"/>
+        app:layout_constraintBottom_toTopOf="@id/eCarateres"/>
 
     <Button
         android:id="@+id/bt1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="+"
+        android:onClick="addJogador"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toRightOf="@id/et1"
-        app:layout_constraintBottom_toTopOf="@id/sp2"/>
+        app:layout_constraintBottom_toTopOf="@id/eCarateres"/>
 
     <TextView
         android:id="@+id/tv3"
@@ -43,14 +44,15 @@
         android:layout_height="wrap_content"
         android:text="Nº de Caracteres :"
         app:layout_constraintTop_toBottomOf="@id/tv2"
-        app:layout_constraintRight_toLeftOf="@id/sp2"
+        app:layout_constraintRight_toLeftOf="@id/eCarateres"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toTopOf="@id/tv4"/>
 
-    <Spinner
-        android:id="@+id/sp2"
+    <EditText
+        android:id="@+id/eCarateres"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:inputType="number"
         app:layout_constraintTop_toBottomOf="@id/et1"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toRightOf="@id/tv3"
@@ -70,10 +72,11 @@
         android:id="@+id/sp3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/sp2"
+        app:layout_constraintTop_toBottomOf="@id/eCarateres"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toRightOf="@id/tv4"
-        app:layout_constraintBottom_toTopOf="@id/sp4"/>
+        app:layout_constraintBottom_toTopOf="@id/eRonda"/>
+
 
     <TextView
         android:id="@+id/tv5"
@@ -81,12 +84,12 @@
         android:layout_height="wrap_content"
         android:text="Nº de rondas :"
         app:layout_constraintTop_toBottomOf="@id/tv4"
-        app:layout_constraintRight_toLeftOf="@id/sp4"
+        app:layout_constraintRight_toLeftOf="@id/eRonda"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toTopOf="@id/bt2"/>
 
-    <Spinner
-        android:id="@+id/sp4"
+    <EditText
+        android:id="@+id/eRonda"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/sp3"
