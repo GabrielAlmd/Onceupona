@@ -25,11 +25,11 @@ public class InsereJogadorBasico extends Activity
         EditText editText2 = (EditText) findViewById(R.id.et2);
         String jogador1 = editText1.getText().toString().trim();
         String jogador2 = editText2.getText().toString().trim();
-
         db = databasehelper.getWritableDatabase();
         databasehelper.addPlayer(db, jogador1);
         databasehelper.addPlayer(db, jogador2);
-
+        Intent intentJogar = new Intent(this, Joga.class);
+        startActivity(intentJogar);
         Intent iSeguinte = new Intent(this,Joga.class);
         iSeguinte.putExtra("jog1",jogador1);
         iSeguinte.putExtra("jog2",jogador2);

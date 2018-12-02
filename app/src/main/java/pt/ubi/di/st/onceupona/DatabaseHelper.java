@@ -17,6 +17,9 @@ public class DatabaseHelper extends SQLiteOpenHelper
     public static final String PLAYERS_TABLE = "Players";
     public static final String PLAYERS_ID = "ID";
     public static final String PLAYERS_NAME = "NAME";
+    public static final String GAMEMODES_TABLE= "GameModes";
+    public static final String GAMEMODES_ID= "ID";
+    public static final String GAMEMODES_NAME = "NAME";
 
     public DatabaseHelper(Context context)
     {
@@ -26,9 +29,13 @@ public class DatabaseHelper extends SQLiteOpenHelper
     @Override
     public void onCreate(SQLiteDatabase db)
     {
-        db.execSQL("CREATE TABLE "+PLAYERSPLAYING_TABLE+"("+PLAYERSPLAYING_ID+" INTEGER PRIMARY KEY AUTOINCREMENT, "+PLAYERSPLAYING_NAME+" TEXT);");
-        db.execSQL("CREATE TABLE "+FINALTEXTS_TABLE+ "("+FINALTEXTS_ID+" INTEGER PRIMARY KEY AUTOINCREMENT, "+FINALTEXTS_CONTENT+" TEXT)");
-        db.execSQL("CREATE TABLE "+PLAYERS_TABLE+ "("+PLAYERS_ID+" INTEGER PRIMARY KEY AUTOINCREMENT, "+PLAYERS_NAME+" TEXT)");
+        db.execSQL("CREATE TABLE "+PLAYERSPLAYING_TABLE+ "("+PLAYERSPLAYING_ID+" INTEGER PRIMARY KEY AUTOINCREMENT, "+PLAYERSPLAYING_NAME+" TEXT);");
+        db.execSQL("CREATE TABLE "+FINALTEXTS_TABLE+ "("+FINALTEXTS_ID+" INTEGER PRIMARY KEY AUTOINCREMENT, "+FINALTEXTS_CONTENT+" TEXT);");
+        db.execSQL("CREATE TABLE "+PLAYERS_TABLE+ "("+PLAYERS_ID+" INTEGER PRIMARY KEY AUTOINCREMENT, "+PLAYERS_NAME+" TEXT);");
+        db.execSQL("CREATE TABLE "+GAMEMODES_TABLE+ "("+GAMEMODES_ID+" INTEGER PRIMARY KEY AUTOINCREMENT, "+GAMEMODES_NAME+" TEXT);");
+        db.execSQL("INSERT INTO "+GAMEMODES_TABLE+" ("+GAMEMODES_NAME+") VALUES ('Básico');");
+        db.execSQL("INSERT INTO "+GAMEMODES_TABLE+" ("+GAMEMODES_NAME+") VALUES ('Round Robin');");
+        db.execSQL("INSERT INTO "+GAMEMODES_TABLE+" ("+GAMEMODES_NAME+") VALUES ('Aleatório');");
 
     }
 
