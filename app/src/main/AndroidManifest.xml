@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".ActivityInicial">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -16,6 +17,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".InsereJogadorBasico" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,12 +25,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".InsereJogadorAvancado"/>
-        <activity android:name=".Scores">
+
+        <activity android:name=".InsereJogadorAvancado">
+
         </activity>
 
-        <activity android:name=".Joga">
 
+        <activity android:name=".Scores">
+
+        </activity>
+
+
+        <activity android:name=".Joga">
 
         </activity>
     </application>

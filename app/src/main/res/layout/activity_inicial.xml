@@ -18,7 +18,7 @@
 
     <Button
         android:id="@+id/bJogoB"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Jogo Básico"
         android:onClick="mJogoBasico"
@@ -29,7 +29,7 @@
 
     <Button
         android:id="@+id/bJogoA"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Jogo Avançado"
         android:onClick="mJogoAvancado"
@@ -40,7 +40,7 @@
 
     <Button
         android:id="@+id/bExit"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Sair"
         android:onClick="mSair"
