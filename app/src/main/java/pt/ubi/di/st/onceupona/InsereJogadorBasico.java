@@ -29,12 +29,9 @@ public class InsereJogadorBasico extends Activity
         databasehelper.addPlayer(db, jogador1);
         databasehelper.addPlayer(db, jogador2);
         Intent intentJogar = new Intent(this, Joga.class);
+        intentJogar.putExtra("jog1", jogador1);
+        intentJogar.putExtra("jog2", jogador2);
         startActivity(intentJogar);
-        Intent iSeguinte = new Intent(this,Joga.class);
-        iSeguinte.putExtra("jog1",jogador1);
-        iSeguinte.putExtra("jog2",jogador2);
-
-        startActivity(iSeguinte);
 
     }
 }

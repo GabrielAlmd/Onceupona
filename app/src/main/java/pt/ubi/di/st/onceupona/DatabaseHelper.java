@@ -75,6 +75,11 @@ public class DatabaseHelper extends SQLiteOpenHelper
         return rankings;
     }
 
+    public void addFinalText(SQLiteDatabase db, String text)
+    {
+        db.execSQL("INSERT INTO "+FINALTEXTS_TABLE+" ("+FINALTEXTS_CONTENT+") VALUES ('"+text+"')");
+    }
+
     /*public String getPlayer(int player_id)
     {
         String jogador = null;
