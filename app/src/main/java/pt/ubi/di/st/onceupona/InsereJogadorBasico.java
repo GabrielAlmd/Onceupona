@@ -31,6 +31,7 @@ public class InsereJogadorBasico extends Activity
         Intent intentJogar = new Intent(this, Joga.class);
         intentJogar.putExtra("jog1", jogador1);
         intentJogar.putExtra("jog2", jogador2);
+        intentJogar.putExtra("modoB", "0");
         startActivity(intentJogar);
 
     }
