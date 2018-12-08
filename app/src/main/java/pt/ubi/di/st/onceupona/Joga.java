@@ -87,7 +87,7 @@ public class Joga extends Activity { //boas duas vezes
             db = myDb.getWritableDatabase();
             myDb.addFinalText(db, textoTextV);
             Intent intentGameover = new Intent(this, GameOver.class);
-            intentGameover.putExtra("finaltext", textoTextV);
+            intentGameover.putExtra("finaltext", texto);
             startActivity(intentGameover);
         }
 
