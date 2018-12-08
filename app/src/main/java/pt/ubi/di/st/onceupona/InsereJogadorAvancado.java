@@ -19,7 +19,8 @@ public class InsereJogadorAvancado extends Activity {
     //EditText
     EditText eNome,eCaracter, eRondas;
 
-    int iCatacter=0,iRondas;
+    int iCatacter=0;
+    String sRondas;
 
     //Spinner
     String[] modo={"Round Robin","Aleatório"};
@@ -64,9 +65,9 @@ public class InsereJogadorAvancado extends Activity {
 
         //Numero de Rondas
         eRondas = findViewById(R.id.eRonda);
-        iRondas = Integer.parseInt(eRondas.getText().toString());
-        iJogoAvancado.putExtra("RONDAS",iRondas);
-
+        sRondas = eRondas.getText().toString();
+        iJogoAvancado.putExtra("RONDAS",sRondas);
+        iJogoAvancado.putExtra("modo", "1");
         startActivity(iJogoAvancado);
     }
 

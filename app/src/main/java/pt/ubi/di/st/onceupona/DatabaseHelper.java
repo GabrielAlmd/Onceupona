@@ -80,6 +80,25 @@ public class DatabaseHelper extends SQLiteOpenHelper
         db.execSQL("INSERT INTO "+FINALTEXTS_TABLE+" ("+FINALTEXTS_CONTENT+") VALUES ('"+text+"')");
     }
 
+    public ArrayList<String> getCurrentPlayers()
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+        ArrayList<String> players = new ArrayList<>();
+        Cursor cursor = db.rawQuery("SELECT "+PLAYERSPLAYING_NAME+" FROM "+PLAYERSPLAYING_TABLE+";", null);
+        if(cursor.moveToFirst())
+        {
+            do{
+                players.add(cursor.getString(0));
+            }while(cursor.moveToNext());
+        }
+        return players;
+    }
+
+    public void eraseTablePlayersPlaying(SQLiteDatabase db)
+    {
+        db.execSQL("DELETE FROM "+PLAYERSPLAYING_TABLE);
+    }
+
     /*public String getPlayer(int player_id)
     {
         String jogador = null;

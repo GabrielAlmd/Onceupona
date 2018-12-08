@@ -23,20 +23,24 @@ public class Joga extends Activity { //boas duas vezes
     Intent iPreviousAct;
     String Jog1;
     String Jog2;
+    String Jog;
     String textoTextV="";
     String aux = "Vez de: ";
     public static List<String> currentText;
-    public static int rounds = 6, flag=0;
+    public static List<String>  playerNames;
+    public static int rounds = 6, flag=0, iterator=1;
     public static String texto="";
+    public int ModoInt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_joga);
         currentText = new ArrayList<>();
+        playerNames = new ArrayList<>();
         tJogadores = findViewById(R.id.label2);
         iPreviousAct=getIntent();
-        int ModoInt = Integer.parseInt(iPreviousAct.getStringExtra("modoB"));
+        ModoInt = Integer.parseInt(iPreviousAct.getStringExtra("modo"));
         if(ModoInt==0)
         {
             Jog1 = iPreviousAct.getStringExtra("jog1");
@@ -44,43 +48,66 @@ public class Joga extends Activity { //boas duas vezes
             aux = aux+Jog1;
             tJogadores.setText(aux);
         }
-
+        else if(ModoInt==1)
+        {
+            playerNames = myDb.getCurrentPlayers();
+            rounds = Integer.parseInt(iPreviousAct.getStringExtra("RONDAS"));
+            Jog = playerNames.get(0);
+            aux = aux+Jog;
+            tJogadores.setText(aux);
+            System.out.println("JOGADORES AQUI CARALHO: "+playerNames);
+            System.out.println("RONDAS CARALHO: "+rounds);
+            System.out.println("JOGADOR QUE COMEÇA: "+Jog);
+        }
 
         tTexto = findViewById(R.id.mostrapalavras);
         eTexto = findViewById(R.id.insereTex);
 
     }
 
-    public void onClickConfirma(View v){
+    public void onClickConfirma(View v)
+    {
         String textoEditT=eTexto.getText().toString();
         texto = texto + " "+textoEditT;
         currentText = new ArrayList<String>(Arrays.asList(texto.split(" ")));
-        System.out.println("TAMANHO AQUI CARALHO: "+currentText.size());
-        System.out.println("ARRAYLIST DAS PALAVRAS CARALHO: "+currentText);
-        //textoTextV = textoTextV+" "+textoEditT;
         if(currentText.size()>=4)
         {
             textoEditT = "... " + currentText.get(currentText.size()-2) +" "+ currentText.get(currentText.size()-1);
             tTexto.setText(textoEditT);
-            //currentText = new ArrayList<String>(Arrays.asList(textoEditT.split(" ")));
         }
         else {
 
             tTexto.setText(texto);
         }
         eTexto.setText("");//
-        rounds--;
         aux = "Vez de: ";
-        if(flag == 0)
+
+        if(ModoInt==0)
         {
-            aux = aux+Jog2;
-            flag = 1;
+            rounds--;
+            if(flag == 0)
+            {
+                aux = aux + Jog2;
+                flag = 1;
+            }
+            else {
+                aux = aux + Jog1;
+                flag = 0;
+            }
         }
-        else
+        else if(ModoInt==1)
         {
-            aux = aux+Jog1;
-            flag = 0;
+            Jog = playerNames.get(iterator);
+            if(iterator==playerNames.size()-1)
+            {
+                iterator = 0;
+                rounds--;
+            }
+            else
+                iterator++;
+            aux = aux + Jog;
         }
+
         tJogadores.setText(aux);
         if(rounds==0)
         {
