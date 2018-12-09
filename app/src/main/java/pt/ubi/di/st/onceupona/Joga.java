@@ -28,7 +28,7 @@ public class Joga extends Activity { //boas duas vezes
     String aux = "Vez de: ";
     public static List<String> currentText;
     public static List<String>  playerNames;
-    public static int rounds = 6, flag=0, iterator=1;
+    public static int rounds = 6, flag=0, iterator=0;
     public static String texto="";
     public int ModoInt;
 
@@ -52,7 +52,7 @@ public class Joga extends Activity { //boas duas vezes
         {
             playerNames = myDb.getCurrentPlayers();
             rounds = Integer.parseInt(iPreviousAct.getStringExtra("RONDAS"));
-            Jog = playerNames.get(0);
+            Jog = playerNames.get(iterator);
             aux = aux+Jog;
             tJogadores.setText(aux);
             System.out.println("JOGADORES AQUI CARALHO: "+playerNames);
@@ -97,14 +97,16 @@ public class Joga extends Activity { //boas duas vezes
         }
         else if(ModoInt==1)
         {
-            Jog = playerNames.get(iterator);
             if(iterator==playerNames.size()-1)
             {
                 iterator = 0;
                 rounds--;
+                Jog = playerNames.get(iterator);
             }
-            else
+            else {
                 iterator++;
+                Jog = playerNames.get(iterator);
+            }
             aux = aux + Jog;
         }
 

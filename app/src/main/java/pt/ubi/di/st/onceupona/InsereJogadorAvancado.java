@@ -19,7 +19,7 @@ public class InsereJogadorAvancado extends Activity {
     //EditText
     EditText eNome,eCaracter, eRondas;
 
-    int iCatacter=0;
+    int iCaracter=0;
     String sRondas;
 
     //Spinner
@@ -56,8 +56,8 @@ public class InsereJogadorAvancado extends Activity {
 
         //Numero de Caracteres
         eCaracter = findViewById(R.id.eCarateres);
-        iCatacter = Integer.parseInt(eCaracter.getText().toString());
-        iJogoAvancado.putExtra("CARACTERES",iCatacter);
+        iCaracter = Integer.parseInt(eCaracter.getText().toString());
+        iJogoAvancado.putExtra("CARACTERES",iCaracter);
 
         //Modo de Jogo
         String sAux = spModo.getSelectedItem().toString();

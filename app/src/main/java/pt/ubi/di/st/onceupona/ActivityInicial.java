@@ -2,6 +2,7 @@ package pt.ubi.di.st.onceupona;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 
@@ -9,12 +10,14 @@ import android.view.View;
 public class ActivityInicial  extends Activity
 {
     DatabaseHelper databasehelper= new DatabaseHelper(this);
+    SQLiteDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicial);
-        databasehelper.getWritableDatabase();
+        db = databasehelper.getWritableDatabase();
+        databasehelper.eraseTablePlayersPlaying(db);
     }
 
     //Método associado ao Botão Jogo Básico para trocar de atividade
