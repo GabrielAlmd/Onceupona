@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class Joga extends Activity { //boas duas vezes
@@ -31,7 +32,7 @@ public class Joga extends Activity { //boas duas vezes
     public static int rounds = 6, flag=0, iterator=0, caracteres;
     public static String texto="";
     public int ModoInt;
-    public String GameMode;
+    public static String GameMode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +60,11 @@ public class Joga extends Activity { //boas duas vezes
             caracteres = Integer.parseInt(iPreviousAct.getStringExtra("CARACTERES"));
             eTexto.setFilters(new InputFilter[] {new InputFilter.LengthFilter(caracteres)});
             System.out.println(caracteres);
-
+            GameMode = iPreviousAct.getStringExtra("GameMode");
+            if(GameMode.equals("Aleatório"))
+            {
+                Collections.shuffle(playerNames);
+            }
             Jog = playerNames.get(iterator);
             aux = aux+Jog;
             tJogadores.setText(aux);
@@ -98,8 +103,14 @@ public class Joga extends Activity { //boas duas vezes
         }
         else if(ModoInt==1)
         {
+            if(GameMode.equals("Aleatório"))
+
             if(iterator==playerNames.size()-1)
             {
+                if(GameMode.equals("Aleatório"))
+                {
+                    Collections.shuffle(playerNames);
+                }
                 iterator = 0;
                 rounds--;
                 Jog = playerNames.get(iterator);

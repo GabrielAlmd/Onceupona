@@ -48,6 +48,10 @@ public class InsereJogadorAvancado extends Activity {
         if(sNome.equals("")){
             Toast.makeText(getApplicationContext(),"Introduza o seu Nome!",Toast.LENGTH_LONG).show();
         }
+        else
+        {
+            Toast.makeText(getApplicationContext(), "Jogador adicionado", Toast.LENGTH_SHORT).show();
+        }
         myDB.addPlayer(db,sNome);
     }
 
