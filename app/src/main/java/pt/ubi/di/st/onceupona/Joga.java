@@ -42,7 +42,7 @@ public class Joga extends Activity { //boas duas vezes
         tJogadores = findViewById(R.id.label2);
         iPreviousAct=getIntent();
         ModoInt = Integer.parseInt(iPreviousAct.getStringExtra("modo"));
-        
+
         tTexto = findViewById(R.id.mostrapalavras);
         eTexto = findViewById(R.id.insereTex);
         if(ModoInt==0)
