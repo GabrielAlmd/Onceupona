@@ -17,62 +17,77 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/bJogoB"/>
+        app:layout_constraintBottom_toTopOf="@id/tl"/>
 
-    <Button
-        android:id="@+id/bJogoB"
+    <TableLayout
+        android:id="@+id/tl"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Jogo Básico"
-        android:onClick="mJogoBasico"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tBV"
-        app:layout_constraintBottom_toTopOf="@id/bJogoA"/>
-
-    <Button
-        android:id="@+id/bJogoA"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Jogo Avançado"
-        android:onClick="mJogoAvancado"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/bJogoB"
-        app:layout_constraintBottom_toTopOf="@id/bRankings"/>
-
-    <Button
-        android:id="@+id/bRankings"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="RANKINGS"
-        android:onClick="mRankings"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/bPreviousTexts"
-        app:layout_constraintTop_toBottomOf="@id/bJogoA"/>
-
-    <Button
-        android:id="@+id/bPreviousTexts"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Textos Anteriores"
-        android:onClick="mPreviousTexts"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
+        android:gravity="center"
         app:layout_constraintBottom_toTopOf="@id/bExit"
-        app:layout_constraintTop_toBottomOf="@id/bRankings"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tBV">
+
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        >
+
+        <Button
+            android:id="@+id/bJogoB"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:text="Jogo Básico"
+            android:onClick="mJogoBasico"
+            />
+
+        <Button
+            android:id="@+id/bJogoA"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:text="Jogo Avançado"
+            android:onClick="mJogoAvancado"
         />
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        >
+
+        <Button
+            android:id="@+id/bRankings"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:text="RANKINGS"
+            android:onClick="mRankings"
+            />
+
+        <Button
+            android:id="@+id/bPreviousTexts"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:text="Textos Anteriores"
+            android:onClick="mPreviousTexts"
+            />
+        </TableRow>
+    </TableLayout>
 
     <Button
         android:id="@+id/bExit"
-        android:layout_width="0dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:text="Sair"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/bPreviousTexts" />
+        app:layout_constraintTop_toBottomOf="@id/tl" />
 
 
 </android.support.constraint.ConstraintLayout>
