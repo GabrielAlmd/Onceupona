@@ -2,15 +2,41 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginRight="10dp"
+    android:layout_marginLeft="10dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".GameOver">
 
     <TextView
+        android:id="@+id/tvtext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/finalText"
+        android:textSize="18dp"
+        android:text="E o resultado final é :"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/finalText"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <TextView
+        android:id="@+id/finalText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@id/tvtext"
+        app:layout_constraintBottom_toTopOf="@id/nextgame"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <Button
+        android:id="@+id/nextgame"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Jogar de novo !"
+        android:onClick="jogarNovo"
+        app:layout_constraintTop_toBottomOf="@id/finalText"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"/>

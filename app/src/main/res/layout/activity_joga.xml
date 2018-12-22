@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginRight="10dp"
+    android:layout_marginLeft="10dp"
     tools:context=".Joga">
 
     <TextView
@@ -11,6 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Jogo Básico"
+        android:textSize="18dp"
         app:layout_constraintBottom_toTopOf="@+id/label2"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -18,10 +21,11 @@
 
     <TextView
         android:id="@+id/label2"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Jogador i"
-        android:gravity="center"
+        android:textSize="18dp"
+        android:textAlignment="center"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/label1"
@@ -33,6 +37,7 @@
         android:layout_height="200dp"
         android:text="Aqui vai aparecer as palavras ..."
         android:gravity="center"
+        android:textSize="18dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/label2"
@@ -40,10 +45,11 @@
 
     <EditText
         android:id="@+id/insereTex"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="Acrescenta a tua frase!"
         android:maxLength="140"
+        android:textAlignment="center"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mostrapalavras"
@@ -53,7 +59,7 @@
 
     <Button
         android:id="@+id/confirma"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Confirma"
         android:onClick="onClickConfirma"
