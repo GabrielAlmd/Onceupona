@@ -26,7 +26,6 @@ public class Scores extends Activity
         databasehelper.getWritableDatabase();
 
         ArrayList<String> rankings = databasehelper.getRankings();
-        System.out.println("RANKINGS AQUI CARALHO: "+rankings);
 
         ArrayList<String> players = new ArrayList<>();
         ArrayList<String> scores = new ArrayList<>();
@@ -37,10 +36,6 @@ public class Scores extends Activity
             scores.add(rankings.get(i));
         for (int i=2; i<rankings.size(); i+=3)
             gameModes.add(rankings.get(i));
-
-        System.out.println("PLAYERS AQUI CARALHO: "+players);
-        System.out.println("SCORES AQUI CARALHO: "+scores);
-        System.out.println("GAMEMODES AQUI CARALHO: "+gameModes);
 
         scoresTable = (TableLayout) findViewById(R.id.rankingsTable);
         for(int i=0; i<players.size(); i++)
@@ -60,17 +55,5 @@ public class Scores extends Activity
             row.addView(t3);
             scoresTable.addView(row);
         }
-
-        /*int i = players.size();
-        String rows[] = new String[i+1];
-        rows[0] = "NOME SCORE GAMEMODE";
-        for(int j=0; j<i; j++)
-            rows[j+1]= players.get(j) +" " +scores.get(j) +" " + gameModes.get(j);
-
-        ArrayAdapter<String> rankingsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, players);
-        ListView rankingsListView = findViewById(R.id.rankingsTable);
-        rankingsListView.setAdapter(rankingsAdapter);*/
-
-
     }
 }

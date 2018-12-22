@@ -46,7 +46,7 @@ public class InsereJogadorAvancado extends Activity {
         sNome = eNome.getText().toString().trim();
 
         if(sNome.equals("")){
-            Toast.makeText(getApplicationContext(),"Introduza o seu Nome!",Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),"Introduza o seu Nome!",Toast.LENGTH_SHORT).show();
         }
         else
         {

@@ -46,8 +46,20 @@
         android:onClick="mRankings"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/bExit"
+        app:layout_constraintBottom_toTopOf="@id/bPreviousTexts"
         app:layout_constraintTop_toBottomOf="@id/bJogoA"/>
+
+    <Button
+        android:id="@+id/bPreviousTexts"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Textos Anteriores"
+        android:onClick="mPreviousTexts"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bExit"
+        app:layout_constraintTop_toBottomOf="@id/bRankings"
+        />
 
     <Button
         android:id="@+id/bExit"
@@ -57,7 +69,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/bRankings" />
+        app:layout_constraintTop_toBottomOf="@id/bPreviousTexts" />
 
 
 </android.support.constraint.ConstraintLayout>

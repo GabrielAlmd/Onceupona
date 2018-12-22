@@ -48,6 +48,7 @@ public class Joga extends Activity { //boas duas vezes
         eTexto = findViewById(R.id.insereTex);
         if(ModoInt==0)
         {
+            GameMode = "Básico";
             Jog1 = iPreviousAct.getStringExtra("jog1");
             Jog2 = iPreviousAct.getStringExtra("jog2");
             aux = aux+Jog1;
@@ -103,8 +104,6 @@ public class Joga extends Activity { //boas duas vezes
         }
         else if(ModoInt==1)
         {
-            if(GameMode.equals("Aleatório"))
-
             if(iterator==playerNames.size()-1)
             {
                 if(GameMode.equals("Aleatório"))
@@ -125,16 +124,15 @@ public class Joga extends Activity { //boas duas vezes
         tJogadores.setText(aux);
         if(rounds==0)
         {
-            db = myDb.getWritableDatabase();
-            myDb.addFinalText(db, texto);
             Intent intentGameover = new Intent(this, GameOver.class);
             intentGameover.putExtra("finaltext", texto);
+            intentGameover.putExtra("GameMode", GameMode);
+            texto="";
+            rounds = 6;
             startActivity(intentGameover);
         }
 
     }
-
-
 
 }
 

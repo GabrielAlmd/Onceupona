@@ -99,11 +99,53 @@ public class DatabaseHelper extends SQLiteOpenHelper
         db.execSQL("DELETE FROM "+PLAYERSPLAYING_TABLE);
     }
 
-    /*public String getPlayer(int player_id)
+    public int checkPlayer(String playerName)
     {
-        String jogador = null;
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT "+PLAYERSPLAYING_NAME+" FROM "+PLAYERSPLAYING_TABLE+" WHERE "+PLAYERSPLAYING_ID+"="+player_id+";", null);
+        int check = 0;
+        Cursor cursor = db.rawQuery("SELECT EXISTS(SELECT 1 FROM "+PLAYERSPLAYING_TABLE+" WHERE "+PLAYERSPLAYING_NAME+"='"+playerName+"')", null);
+        if(cursor.moveToFirst())
+            check = cursor.getInt(0);
+        return check;
+    }
 
-    }*/
+    public void addPlayerRankings(SQLiteDatabase db, String playerName, int gameMode)
+    {
+        db.execSQL("INSERT INTO "+RANKINGS_TABLE+" ("+RANKINGS_PLAYER_NAME+", "+RANKINGS_PLAYER_SCORE+", "+RANKINGS_GAME_MODE+") VALUES ('"+playerName+"', 1, "+gameMode+");");
+    }
+
+    public int checkPlayerRankings(String playerName, int gameMode)
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+        int check = 0;
+        Cursor cursor = db.rawQuery("SELECT EXISTS(SELECT 1 FROM "+RANKINGS_TABLE+" WHERE "+RANKINGS_PLAYER_NAME+"='"+playerName+"' AND "+RANKINGS_GAME_MODE+"="+gameMode+");", null);
+        if(cursor.moveToFirst())
+            check = cursor.getInt(0);
+        return check;
+    }
+
+    public void updatePlayerScore(String playerName, int gameMode)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        int score = 0;
+        Cursor cursor = db.rawQuery("SELECT "+RANKINGS_PLAYER_SCORE+" FROM "+RANKINGS_TABLE+" WHERE "+RANKINGS_PLAYER_NAME+"='"+playerName+"' AND "+RANKINGS_GAME_MODE+"="+gameMode+";", null);
+        if(cursor.moveToFirst())
+            score = cursor.getInt(0);
+        score = score+1;
+        db.execSQL("UPDATE "+RANKINGS_TABLE+" SET "+RANKINGS_PLAYER_SCORE+"="+score+" WHERE "+RANKINGS_PLAYER_NAME+"='"+playerName+"' AND "+RANKINGS_GAME_MODE+"="+gameMode+";");
+    }
+
+    public ArrayList<String> getFinalTexts()
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+        ArrayList<String> texts = new ArrayList<>();
+        Cursor cursor = db.rawQuery("SELECT "+FINALTEXTS_CONTENT+" FROM "+FINALTEXTS_TABLE+";", null);
+        if(cursor.moveToFirst())
+        {
+            do {
+                texts.add(cursor.getString(0));
+            }while(cursor.moveToNext());
+        }
+        return texts;
+    }
 }

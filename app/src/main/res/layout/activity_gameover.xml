@@ -11,8 +11,27 @@
         android:layout_height="wrap_content"
         android:id="@+id/finalText"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bestplayer"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"/>
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/bestplayer"
+        android:hint="Escolhe o jogador mais engraçado"
+        app:layout_constraintTop_toBottomOf="@id/finalText"
+        app:layout_constraintBottom_toTopOf="@id/submitbutton"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/submitbutton"
+        android:text="Submit"
+        android:onClick="onClickSubmit"
+        app:layout_constraintTop_toBottomOf="@id/bestplayer"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
 
 </android.support.constraint.ConstraintLayout>

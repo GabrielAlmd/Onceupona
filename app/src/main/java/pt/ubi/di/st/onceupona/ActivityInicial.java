@@ -42,12 +42,10 @@ public class ActivityInicial  extends Activity
         startActivity(iRankings);
     }
 
-    /****************************************************************
-    //Método associado ao Botão Exit para trocar de atividade
-    public void mJogoAvancado(View v){
-        Intent iExit = new Intent(this, Exit.class);
-
-        startActivity(iExit);
-    }*****************************************************************/
-
+    //Método associado ao Botão Previous Texts para trocar de atividade
+    public void mPreviousTexts(View v)
+    {
+        Intent iPreviousTexts = new Intent(this, PreviousTexts.class);
+        startActivity(iPreviousTexts);
+    }
 }
