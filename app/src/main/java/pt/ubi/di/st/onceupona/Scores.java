@@ -1,7 +1,9 @@
 package pt.ubi.di.st.onceupona;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -55,5 +57,10 @@ public class Scores extends Activity
             row.addView(t3);
             scoresTable.addView(row);
         }
+    }
+
+    public void backToMain (View view){
+        Intent ibackMain = new Intent(this, ActivityInicial.class);
+        startActivity(ibackMain);
     }
 }
