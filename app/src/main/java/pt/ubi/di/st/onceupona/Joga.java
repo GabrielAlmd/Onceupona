@@ -16,7 +16,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class Joga extends Activity { //boas duas vezes
+public class Joga extends Activity {
     DatabaseHelper myDb = new DatabaseHelper(this);
     SQLiteDatabase db;
     TextView tJogadores;
